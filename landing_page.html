@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Halte Metro Jabar Trans - Home</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colors matching your spec */
+            --navy: #0F172A;
+            --blue: #2563EB;
+            --red: #E11D48;
+            --green: #10B981;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --bg-color: #F8FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            color: var(--text-main);
+        }
+
+        /* ----- Navbar ----- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(248, 250, 252, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--blue);
+        }
+
+        .btn-masuk {
+            padding: 10px 28px;
+            background: white;
+            color: var(--navy);
+            border: 2px solid #E2E8F0;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-masuk:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+        }
+
+        /* ----- Hero Section ----- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8% 0;
+            position: relative;
+        }
+
+        /* Abstract Background Elements */
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+            animation: floatShape 8s infinite alternate ease-in-out;
+        }
+
+        .shape-1 {
+            width: 450px;
+            height: 450px;
+            background: var(--blue);
+            top: -100px;
+            right: -50px;
+        }
+
+        .shape-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--red);
+            bottom: 5%;
+            right: 25%;
+            animation-delay: -4s;
+        }
+
+        /* Content Left */
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+            z-index: 10;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .tagline {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding: 8px 18px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--navy);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
+            background: #1D4ED8;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--navy);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--text-muted);
+        }
+
+        /* Image Mockup Right */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            position: relative;
+            animation: slideUp 1s ease-out 0.2s both;
+        }
+
+        /* Glassmorphism Dashboard Mockup */
+        .mockup-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 600px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 36px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 16px;
+            animation: floatMockup 6s ease-in-out infinite;
+        }
+
+        /* Inner Screen (Dashboard Map Look) */
+        .mockup-screen {
+            width: 100%;
+            height: 100%;
+            background: #0A192F;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+        }
+
+        /* Decorative Mockup Elements */
+        .fake-map-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(#1E293B 2px, transparent 2px),
+                radial-gradient(#1E293B 2px, transparent 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            opacity: 0.6;
+        }
+
+        .fake-route-b {
+            position: absolute;
+            width: 180px;
+            height: 200px;
+            border-top: 5px solid var(--blue);
+            border-right: 5px solid var(--blue);
+            border-radius: 0 60px 0 0;
+            top: 35%;
+            left: 20%;
+            transform: rotate(15deg);
+            opacity: 0.9;
+            filter: drop-shadow(0 0 10px rgba(37,99,235,0.8));
+        }
+
+        .fake-route-r {
+            position: absolute;
+            width: 250px;
+            height: 120px;
+            border-bottom: 5px solid var(--red);
+            border-left: 5px solid var(--red);
+            border-radius: 0 0 0 60px;
+            top: 15%;
+            right: 15%;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 10px rgba(225,29,72,0.8));
+        }
+
+        .fake-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 5px solid var(--red);
+            border-radius: 50%;
+            top: 60%;
+            left: 60%;
+            box-shadow: 0 0 20px var(--red);
+            z-index: 2;
+        }
+        
+        .fake-marker::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(225, 29, 72, 0.3);
+            border-radius: 50%;
+            top: -20px;
+            left: -20px;
+            animation: pulse-ring 2s infinite ease-out;
+        }
+
+        /* Fake floating UI inside mockup */
+        .fake-panel {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            right: 24px;
+            height: 130px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 24px;
+            z-index: 5;
+        }
+        
+        .fake-line {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            margin-bottom: 16px;
+        }
+
+        .fake-line:hover { background: rgba(255, 255, 255, 0.3); }
+        .fake-line:nth-child(1) { width: 50%; background: #64FFDA; box-shadow: 0 0 10px rgba(100,255,218,0.5); }
+        .fake-line:nth-child(2) { width: 80%; }
+        .fake-line:nth-child(3) { width: 60%; }
+
+        /* ----- Animations ----- */
+        @keyframes floatMockup {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes floatShape {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.7); opacity: 1; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        /* ----- Responsive / Mobile Friendly ----- */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3.2rem; }
+            .hero { padding: 80px 5% 0; }
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                flex-direction: column;
+                padding-top: 140px;
+                padding-bottom: 60px;
+                text-align: center;
+                gap: 60px;
+            }
+
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 100%;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                display: none; /* Can be replaced with a hamburger menu later */
+            }
+
+            .mockup-container {
+                height: 450px;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-cta { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+            .mockup-container { height: 350px; max-width: 100%; }
+            .logo { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Decoration -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <!-- Top Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">🚌 MJT<span>.</span></a>
+        
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <!-- Navigates directly to your active React application at '/' -->
+            <a href="/">Peta</a>
+            <a href="#">Tentang</a>
+        </div>
+        
+        <a href="#" class="btn-masuk">Mulai</a>
+    </nav>
+
+    <!-- Hero Content Section -->
+    <section class="hero">
+        
+        <!-- Left Text Sidebar -->
+        <div class="hero-content">
+            <span class="tagline">Where Mobility Meets Convenience</span>
+            
+            <h1 class="hero-title">Peta Halte Metro Jabar Trans</h1>
+            
+            <p class="hero-subtitle">
+                Akses mudah informasi rute dan halte bus di wilayah Bandung Raya. Jelajahi 6 koridor lengkap melalui sistem peta interaktif modern demi kenyamanan mobilitas harian Anda.
+            </p>
+            
+            <div class="hero-cta">
+                <!-- Directing to the root where the React map is hosted -->
+                <a href="/" class="btn btn-primary">Lihat Peta →</a>
+                <a href="#explore" class="btn btn-secondary">Mulai Jelajah</a>
+            </div>
+        </div>
+
+        <!-- Right Visual Mockup (CSS Art Dashboard) -->
+        <div class="hero-image">
+            <div class="mockup-container">
+                <div class="mockup-screen">
+                    <div class="fake-map-bg"></div>
+                    
+                    <!-- Decorative Map Lines -->
+                    <div class="fake-route-b"></div>
+                    <div class="fake-route-r"></div>
+                    
+                    <!-- Animated Marker Point -->
+                    <div class="fake-marker"></div>
+                    
+                    <!-- Glassmorphism Panel Inside Mockup -->
+                    <div class="fake-panel">
+                        <div class="fake-line"></div>
+                        <div class="fake-line"></div>
+                        <div class="fake-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,3215 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "name": "Halte 1",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.601,
+          -6.901000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "name": "Halte 2",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60199999999999,
+          -6.902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "name": "Halte 3",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.603,
+          -6.9030000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "name": "Halte 4",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.604,
+          -6.904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "name": "Halte 5",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60499999999999,
+          -6.905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "name": "Halte 6",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.606,
+          -6.906000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "name": "Halte 7",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.607,
+          -6.907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "name": "Halte 8",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.60799999999999,
+          -6.908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "name": "Halte 9",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.609,
+          -6.909000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "name": "Halte 10",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61,
+          -6.91
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "name": "Halte 11",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61099999999999,
+          -6.9110000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "name": "Halte 12",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.612,
+          -6.912
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "name": "Halte 13",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.613,
+          -6.913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "name": "Halte 14",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61399999999999,
+          -6.914000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 15,
+        "name": "Halte 15",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.615,
+          -6.915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 16,
+        "name": "Halte 16",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.616,
+          -6.916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 17,
+        "name": "Halte 17",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61699999999999,
+          -6.917000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 18,
+        "name": "Halte 18",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.618,
+          -6.918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 19,
+        "name": "Halte 19",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.619,
+          -6.9190000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 20,
+        "name": "Halte 20",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.61999999999999,
+          -6.92
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 21,
+        "name": "Halte 21",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.621,
+          -6.921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 22,
+        "name": "Halte 22",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.622,
+          -6.922000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 23,
+        "name": "Halte 23",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62299999999999,
+          -6.923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 24,
+        "name": "Halte 24",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.624,
+          -6.924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 25,
+        "name": "Halte 25",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.625,
+          -6.925000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 26,
+        "name": "Halte 26",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62599999999999,
+          -6.926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 27,
+        "name": "Halte 27",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.627,
+          -6.9270000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 28,
+        "name": "Halte 28",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.628,
+          -6.928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 29,
+        "name": "Halte 29",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.62899999999999,
+          -6.929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 30,
+        "name": "Halte 30",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63,
+          -6.930000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 31,
+        "name": "Halte 31",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.631,
+          -6.931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 32,
+        "name": "Halte 32",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63199999999999,
+          -6.932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 33,
+        "name": "Halte 33",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.633,
+          -6.933000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 34,
+        "name": "Halte 34",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.634,
+          -6.934
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 35,
+        "name": "Halte 35",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63499999999999,
+          -6.9350000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 36,
+        "name": "Halte 36",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.636,
+          -6.936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 37,
+        "name": "Halte 37",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.637,
+          -6.937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 38,
+        "name": "Halte 38",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.63799999999999,
+          -6.938000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 39,
+        "name": "Halte 39",
+        "koridor": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.639,
+          -6.939
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 40,
+        "name": "Halte 40",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64,
+          -6.94
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 41,
+        "name": "Halte 41",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64099999999999,
+          -6.941000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 42,
+        "name": "Halte 42",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.642,
+          -6.942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 43,
+        "name": "Halte 43",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.643,
+          -6.9430000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 44,
+        "name": "Halte 44",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64399999999999,
+          -6.944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 45,
+        "name": "Halte 45",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.645,
+          -6.945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 46,
+        "name": "Halte 46",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.646,
+          -6.946000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 47,
+        "name": "Halte 47",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64699999999999,
+          -6.947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 48,
+        "name": "Halte 48",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.648,
+          -6.948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 49,
+        "name": "Halte 49",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.649,
+          -6.949000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 50,
+        "name": "Halte 50",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.64999999999999,
+          -6.95
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 51,
+        "name": "Halte 51",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.651,
+          -6.9510000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 52,
+        "name": "Halte 52",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.652,
+          -6.952
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 53,
+        "name": "Halte 53",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.65299999999999,
+          -6.953
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 54,
+        "name": "Halte 54",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.654,
+          -6.954000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 55,
+        "name": "Halte 55",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.655,
+          -6.955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 56,
+        "name": "Halte 56",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.65599999999999,
+          -6.956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 57,
+        "name": "Halte 57",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.657,
+          -6.957000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 58,
+        "name": "Halte 58",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.658,
+          -6.958
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 59,
+        "name": "Halte 59",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.65899999999999,
+          -6.9590000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 60,
+        "name": "Halte 60",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66,
+          -6.96
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 61,
+        "name": "Halte 61",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.661,
+          -6.961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 62,
+        "name": "Halte 62",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66199999999999,
+          -6.962000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 63,
+        "name": "Halte 63",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.663,
+          -6.963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 64,
+        "name": "Halte 64",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66399999999999,
+          -6.964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 65,
+        "name": "Halte 65",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66499999999999,
+          -6.965000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 66,
+        "name": "Halte 66",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.666,
+          -6.966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 67,
+        "name": "Halte 67",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66699999999999,
+          -6.9670000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 68,
+        "name": "Halte 68",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66799999999999,
+          -6.968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 69,
+        "name": "Halte 69",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.669,
+          -6.969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 70,
+        "name": "Halte 70",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.66999999999999,
+          -6.970000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 71,
+        "name": "Halte 71",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67099999999999,
+          -6.971
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 72,
+        "name": "Halte 72",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.672,
+          -6.972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 73,
+        "name": "Halte 73",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67299999999999,
+          -6.973000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 74,
+        "name": "Halte 74",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67399999999999,
+          -6.974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 75,
+        "name": "Halte 75",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.675,
+          -6.9750000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 76,
+        "name": "Halte 76",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67599999999999,
+          -6.976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 77,
+        "name": "Halte 77",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67699999999999,
+          -6.977
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 78,
+        "name": "Halte 78",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.678,
+          -6.978000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 79,
+        "name": "Halte 79",
+        "koridor": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67899999999999,
+          -6.979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 80,
+        "name": "Halte 80",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.67999999999999,
+          -6.98
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 81,
+        "name": "Halte 81",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.681,
+          -6.981000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 82,
+        "name": "Halte 82",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.68199999999999,
+          -6.982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 83,
+        "name": "Halte 83",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.68299999999999,
+          -6.9830000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 84,
+        "name": "Halte 84",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.684,
+          -6.984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 85,
+        "name": "Halte 85",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.68499999999999,
+          -6.985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 86,
+        "name": "Halte 86",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.68599999999999,
+          -6.986000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 87,
+        "name": "Halte 87",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.687,
+          -6.987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 88,
+        "name": "Halte 88",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.68799999999999,
+          -6.988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 89,
+        "name": "Halte 89",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.689,
+          -6.989000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 90,
+        "name": "Halte 90",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.69,
+          -6.99
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 91,
+        "name": "Halte 91",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.69099999999999,
+          -6.9910000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 92,
+        "name": "Halte 92",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.692,
+          -6.992
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 93,
+        "name": "Halte 93",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.693,
+          -6.993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 94,
+        "name": "Halte 94",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.69399999999999,
+          -6.994000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 95,
+        "name": "Halte 95",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.695,
+          -6.995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 96,
+        "name": "Halte 96",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.696,
+          -6.996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 97,
+        "name": "Halte 97",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.69699999999999,
+          -6.997000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 98,
+        "name": "Halte 98",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.698,
+          -6.998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 99,
+        "name": "Halte 99",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.699,
+          -6.9990000000000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 100,
+        "name": "Halte 100",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.69999999999999,
+          -7.0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 101,
+        "name": "Halte 101",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.701,
+          -7.001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 102,
+        "name": "Halte 102",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.702,
+          -7.002000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 103,
+        "name": "Halte 103",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.70299999999999,
+          -7.003
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 104,
+        "name": "Halte 104",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.704,
+          -7.0040000000000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 105,
+        "name": "Halte 105",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.705,
+          -7.005000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 106,
+        "name": "Halte 106",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.70599999999999,
+          -7.006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 107,
+        "name": "Halte 107",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.707,
+          -7.007000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 108,
+        "name": "Halte 108",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.708,
+          -7.008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 109,
+        "name": "Halte 109",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.70899999999999,
+          -7.009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 110,
+        "name": "Halte 110",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.71,
+          -7.010000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 111,
+        "name": "Halte 111",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.711,
+          -7.011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 112,
+        "name": "Halte 112",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.71199999999999,
+          -7.0120000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 113,
+        "name": "Halte 113",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.713,
+          -7.013000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 114,
+        "name": "Halte 114",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.714,
+          -7.014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 115,
+        "name": "Halte 115",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.71499999999999,
+          -7.015000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 116,
+        "name": "Halte 116",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.716,
+          -7.016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 117,
+        "name": "Halte 117",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.717,
+          -7.017
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 118,
+        "name": "Halte 118",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.71799999999999,
+          -7.018000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 119,
+        "name": "Halte 119",
+        "koridor": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.719,
+          -7.019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 120,
+        "name": "Halte 120",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.72,
+          -7.0200000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 121,
+        "name": "Halte 121",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.72099999999999,
+          -7.021000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 122,
+        "name": "Halte 122",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.722,
+          -7.022
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 123,
+        "name": "Halte 123",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.723,
+          -7.023000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 124,
+        "name": "Halte 124",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.72399999999999,
+          -7.024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 125,
+        "name": "Halte 125",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.725,
+          -7.025
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 126,
+        "name": "Halte 126",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.726,
+          -7.026000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 127,
+        "name": "Halte 127",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.72699999999999,
+          -7.027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 128,
+        "name": "Halte 128",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.728,
+          -7.0280000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 129,
+        "name": "Halte 129",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.729,
+          -7.029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 130,
+        "name": "Halte 130",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.72999999999999,
+          -7.03
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 131,
+        "name": "Halte 131",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.731,
+          -7.031000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 132,
+        "name": "Halte 132",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.732,
+          -7.032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 133,
+        "name": "Halte 133",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.73299999999999,
+          -7.033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 134,
+        "name": "Halte 134",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.734,
+          -7.034000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 135,
+        "name": "Halte 135",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.735,
+          -7.035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 136,
+        "name": "Halte 136",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.73599999999999,
+          -7.0360000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 137,
+        "name": "Halte 137",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.737,
+          -7.037000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 138,
+        "name": "Halte 138",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.738,
+          -7.038
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 139,
+        "name": "Halte 139",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.73899999999999,
+          -7.039000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 140,
+        "name": "Halte 140",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.74,
+          -7.04
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 141,
+        "name": "Halte 141",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.741,
+          -7.041
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 142,
+        "name": "Halte 142",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.74199999999999,
+          -7.042000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 143,
+        "name": "Halte 143",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.743,
+          -7.043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 144,
+        "name": "Halte 144",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.744,
+          -7.0440000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 145,
+        "name": "Halte 145",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.74499999999999,
+          -7.045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 146,
+        "name": "Halte 146",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.746,
+          -7.046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 147,
+        "name": "Halte 147",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.747,
+          -7.047000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 148,
+        "name": "Halte 148",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.74799999999999,
+          -7.048
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 149,
+        "name": "Halte 149",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.749,
+          -7.049
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 150,
+        "name": "Halte 150",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.75,
+          -7.050000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 151,
+        "name": "Halte 151",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.75099999999999,
+          -7.051
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 152,
+        "name": "Halte 152",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.752,
+          -7.0520000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 153,
+        "name": "Halte 153",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.753,
+          -7.053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 154,
+        "name": "Halte 154",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.75399999999999,
+          -7.054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 155,
+        "name": "Halte 155",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.755,
+          -7.055000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 156,
+        "name": "Halte 156",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.756,
+          -7.056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 157,
+        "name": "Halte 157",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.75699999999999,
+          -7.057
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 158,
+        "name": "Halte 158",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.758,
+          -7.058000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 159,
+        "name": "Halte 159",
+        "koridor": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.759,
+          -7.059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 160,
+        "name": "Halte 160",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.75999999999999,
+          -7.0600000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 161,
+        "name": "Halte 161",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.761,
+          -7.061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 162,
+        "name": "Halte 162",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.762,
+          -7.062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 163,
+        "name": "Halte 163",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.76299999999999,
+          -7.063000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 164,
+        "name": "Halte 164",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.764,
+          -7.064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 165,
+        "name": "Halte 165",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.765,
+          -7.065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 166,
+        "name": "Halte 166",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.76599999999999,
+          -7.066000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 167,
+        "name": "Halte 167",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.767,
+          -7.067
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 168,
+        "name": "Halte 168",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.768,
+          -7.0680000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 169,
+        "name": "Halte 169",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.76899999999999,
+          -7.069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 170,
+        "name": "Halte 170",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.77,
+          -7.07
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 171,
+        "name": "Halte 171",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.771,
+          -7.071000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 172,
+        "name": "Halte 172",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.77199999999999,
+          -7.072
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 173,
+        "name": "Halte 173",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.773,
+          -7.073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 174,
+        "name": "Halte 174",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.774,
+          -7.074000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 175,
+        "name": "Halte 175",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.77499999999999,
+          -7.075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 176,
+        "name": "Halte 176",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.776,
+          -7.0760000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 177,
+        "name": "Halte 177",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.777,
+          -7.077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 178,
+        "name": "Halte 178",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.77799999999999,
+          -7.078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 179,
+        "name": "Halte 179",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.779,
+          -7.079000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 180,
+        "name": "Halte 180",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.78,
+          -7.08
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 181,
+        "name": "Halte 181",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.78099999999999,
+          -7.081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 182,
+        "name": "Halte 182",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.782,
+          -7.082000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 183,
+        "name": "Halte 183",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.783,
+          -7.083
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 184,
+        "name": "Halte 184",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.78399999999999,
+          -7.0840000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 185,
+        "name": "Halte 185",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.785,
+          -7.085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 186,
+        "name": "Halte 186",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.786,
+          -7.086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 187,
+        "name": "Halte 187",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.78699999999999,
+          -7.087000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 188,
+        "name": "Halte 188",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.788,
+          -7.088
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 189,
+        "name": "Halte 189",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.78899999999999,
+          -7.089
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 190,
+        "name": "Halte 190",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.78999999999999,
+          -7.090000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 191,
+        "name": "Halte 191",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.791,
+          -7.091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 192,
+        "name": "Halte 192",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.79199999999999,
+          -7.0920000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 193,
+        "name": "Halte 193",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.79299999999999,
+          -7.093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 194,
+        "name": "Halte 194",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.794,
+          -7.094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 195,
+        "name": "Halte 195",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.79499999999999,
+          -7.095000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 196,
+        "name": "Halte 196",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.79599999999999,
+          -7.096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 197,
+        "name": "Halte 197",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.797,
+          -7.097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 198,
+        "name": "Halte 198",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.79799999999999,
+          -7.098000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 199,
+        "name": "Halte 199",
+        "koridor": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.79899999999999,
+          -7.099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 200,
+        "name": "Halte 200",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.8,
+          -7.1000000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 201,
+        "name": "Halte 201",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.80099999999999,
+          -7.101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 202,
+        "name": "Halte 202",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.80199999999999,
+          -7.102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 203,
+        "name": "Halte 203",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.803,
+          -7.103000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 204,
+        "name": "Halte 204",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.80399999999999,
+          -7.104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 205,
+        "name": "Halte 205",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.80499999999999,
+          -7.105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 206,
+        "name": "Halte 206",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.806,
+          -7.106000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 207,
+        "name": "Halte 207",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.80699999999999,
+          -7.107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 208,
+        "name": "Halte 208",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.80799999999999,
+          -7.1080000000000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 209,
+        "name": "Halte 209",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.809,
+          -7.109
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 210,
+        "name": "Halte 210",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.80999999999999,
+          -7.11
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 211,
+        "name": "Halte 211",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.81099999999999,
+          -7.111000000000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 212,
+        "name": "Halte 212",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.812,
+          -7.112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 213,
+        "name": "Halte 213",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.81299999999999,
+          -7.113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 214,
+        "name": "Halte 214",
+        "koridor": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.814,
+          -7.114000000000001
+        ]
+      }
+    }
+  ]
+}
