@@ -1,6 +1,7 @@
 /* App-specific styles */
 
 /* Fix for Leaflet custom icon positioning */
+
 .custom-stop-icon,
 .custom-terminal-icon,
 .custom-transit-icon {
@@ -10,7 +11,7 @@
 
 /* Map loading animation */
 .leaflet-container {
-  background: var(--primary);
+  background: #f8fafc;
 }
 
 /* Polyline hover effect */
@@ -22,7 +23,7 @@
 /* User Location tracker styling */
 .locate-me-btn {
   position: absolute;
-  bottom: 30px;
+  top: 20px;
   right: 20px;
   z-index: 1000;
   background: white;
@@ -46,4 +47,15 @@
 @keyframes pulse-ring {
   0% { transform: scale(0.5); opacity: 1; }
   100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Smooth transition for the bus rotation only */
+.custom-bus-container {
+  z-index: 9999 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-bus-container img {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
 }

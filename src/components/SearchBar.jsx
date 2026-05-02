@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useMemo } from "react";
+import { translations } from "../utils/translations";
 
-function SearchBar({ corridors, onSelectStop }) {
+function SearchBar({ corridors, onSelectStop, lang = 'id' }) {
+    const t = translations[lang];
     const [query, setQuery] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const [highlightIndex, setHighlightIndex] = useState(-1);
@@ -111,7 +113,7 @@ function SearchBar({ corridors, onSelectStop }) {
                     ref={inputRef}
                     type="text"
                     className="search-input"
-                    placeholder="Cari halte atau terminal..."
+                    placeholder={lang === 'id' ? 'Cari halte atau terminal...' : 'Search for stops or terminals...'}
                     value={query}
                     onChange={(e) => {
                         setQuery(e.target.value);
@@ -142,30 +144,30 @@ function SearchBar({ corridors, onSelectStop }) {
                             className={`filter-tab ${filterDirection === "all" ? "active" : ""}`}
                             onClick={() => setFilterDirection("all")}
                         >
-                            Semua
+                            {lang === 'id' ? 'Semua' : 'All'}
                         </button>
                         <button
                             className={`filter-tab tab-a ${filterDirection === "A" ? "active" : ""}`}
                             onClick={() => setFilterDirection("A")}
                         >
-                            Halte A
+                            {lang === 'id' ? 'Halte A' : 'Stop A'}
                         </button>
                         <button
                             className={`filter-tab tab-b ${filterDirection === "B" ? "active" : ""}`}
                             onClick={() => setFilterDirection("B")}
                         >
-                            Halte B
+                            {lang === 'id' ? 'Halte B' : 'Stop B'}
                         </button>
                     </div>
 
                     {filteredStops.length === 0 ? (
                         <div className="search-no-results">
-                            <span>😕</span> Halte tidak ditemukan
+                            <span>😕</span> {lang === 'id' ? 'Halte tidak ditemukan' : 'Stop not found'}
                         </div>
                     ) : (
                         <>
                             <div className="search-results-count">
-                                {filteredStops.length} titik halte ditemukan
+                                {filteredStops.length} {lang === 'id' ? 'titik halte ditemukan' : 'bus stops found'}
                             </div>
                             <div className="search-results-list">
                                 {filteredStops.slice(0, 50).map((stop, index) => (
@@ -188,7 +190,7 @@ function SearchBar({ corridors, onSelectStop }) {
                                                     {stop.direction}
                                                 </span>
                                             </div>
-                                            <div className="search-result-meta">
+                                            <div className="search-result-info-meta">
                                                 <span
                                                     className="search-corridor-tag"
                                                     style={{ background: stop.corridorColor }}
@@ -201,13 +203,13 @@ function SearchBar({ corridors, onSelectStop }) {
                                             </div>
                                         </div>
                                         <div className="search-result-type">
-                                            {stop.type === "terminal" ? "Terminal" : "Halte"}
+                                            {stop.type === "terminal" ? (lang === 'id' ? 'Terminal' : 'Terminal') : (lang === 'id' ? 'Halte' : 'Bus Stop')}
                                         </div>
                                     </div>
                                 ))}
                                 {filteredStops.length > 50 && (
                                     <div className="search-more">
-                                        +{filteredStops.length - 50} halte lainnya...
+                                        +{filteredStops.length - 50} {lang === 'id' ? 'halte lainnya...' : 'other stops...'}
                                     </div>
                                 )}
                             </div>

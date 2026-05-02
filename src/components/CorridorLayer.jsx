@@ -71,8 +71,13 @@ const createTerminalIcon = (color, direction) =>
         popupAnchor: [0, -14],
     });
 
-function CorridorLayer({ corridor, visible }) {
+function CorridorLayer({ corridor, visible, onRouteRequest, onSaveStop, savedStops = [] }) {
     if (!visible) return null;
+
+    const isStopSaved = (stop) => {
+        const uniqueId = `${stop.name}-${stop.lat}-${stop.lng}`;
+        return savedStops.some(s => s.uniqueId === uniqueId);
+    };
 
     return (
         <>
@@ -86,6 +91,7 @@ function CorridorLayer({ corridor, visible }) {
                     lineCap: "round",
                     lineJoin: "round",
                 }}
+                smoothFactor={0}
             />
 
             {/* All halt stops (A and B) */}
@@ -94,6 +100,8 @@ function CorridorLayer({ corridor, visible }) {
                     stop.type === "terminal"
                         ? createTerminalIcon(corridor.color, stop.direction)
                         : createStopIcon(corridor.color, stop.direction);
+
+                const saved = isStopSaved(stop);
 
                 return (
                     <Marker
@@ -112,17 +120,25 @@ function CorridorLayer({ corridor, visible }) {
                         <Popup className="gm-popup">
                             <div className="gm-popup-content">
                                 <div className="gm-action-row">
-                                    <div className="gm-action-btn">
+                                    <div 
+                                        className="gm-action-btn"
+                                        onClick={() => onRouteRequest && onRouteRequest(stop)}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         <div className="gm-action-icon bg-blue">
                                             <svg viewBox="0 0 24 24" width="20" height="20"><path fill="white" d="M13.5 21L12 19.5 16.5 15H5v-4h2v2h9.5l-4.5-4.5L13.5 7l7 7z" /></svg>
                                         </div>
                                         <span>Rute</span>
                                     </div>
-                                    <div className="gm-action-btn">
-                                        <div className="gm-action-icon">
+                                    <div 
+                                        className="gm-action-btn"
+                                        onClick={() => onSaveStop && onSaveStop(stop)}
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        <div className={`gm-action-icon ${saved ? 'bg-orange' : ''}`} style={saved ? { color: 'white', backgroundColor: '#F39C12', borderColor: '#F39C12' } : {}}>
                                             <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" /></svg>
                                         </div>
-                                        <span>Simpan</span>
+                                        <span style={saved ? { color: '#F39C12' } : {}}>{saved ? 'Disimpan' : 'Simpan'}</span>
                                     </div>
                                     <div className="gm-action-btn">
                                         <div className="gm-action-icon">
@@ -130,13 +146,14 @@ function CorridorLayer({ corridor, visible }) {
                                         </div>
                                         <span>Di Sekitar</span>
                                     </div>
-                                    <div className="gm-action-btn">
-                                        <div className="gm-action-icon">
-                                            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14zM12 17c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1z" /></svg>
-                                        </div>
-                                        <span>Kirim ke ponsel</span>
-                                    </div>
-                                    <div className="gm-action-btn">
+                                    <div 
+                                        className="gm-action-btn"
+                                        onClick={() => {
+                                            const shareText = `Halo! Cek lokasi halte ini di Metro Jabar Trans:\n\n📍 *${stop.name}*\n🚌 Koridor: ${corridor.name}\n\nLihat di Peta: https://www.google.com/maps?q=${stop.lat},${stop.lng}`;
+                                            window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
+                                        }}
+                                        style={{ cursor: 'pointer' }}
+                                    >
                                         <div className="gm-action-icon">
                                             <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z" /></svg>
                                         </div>

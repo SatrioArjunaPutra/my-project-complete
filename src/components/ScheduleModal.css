@@ -1,0 +1,105 @@
+/* ScheduleModal.css */
+
+.schedule-modal {
+  max-width: 600px;
+}
+
+.schedule-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.schedule-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.schedule-header p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.schedule-item:hover {
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+  border-color: var(--accent);
+}
+
+.schedule-item-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.schedule-corridor-badge {
+  color: white;
+  font-weight: 900;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  min-width: 45px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.schedule-route-name {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.schedule-stops-count {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.schedule-time {
+  font-weight: 800;
+  color: var(--accent);
+  font-size: 0.95rem;
+  background: rgba(0, 167, 208, 0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.schedule-warning {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: #fffbeb;
+  border-radius: 12px;
+  border: 1px solid #fde68a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #b45309;
+  font-weight: 600;
+}
+
+.schedule-warning span {
+  font-size: 1.1rem;
+}

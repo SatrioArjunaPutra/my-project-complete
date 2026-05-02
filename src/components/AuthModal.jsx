@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { translations } from '../utils/translations';
 import './AuthModal.css';
 
-const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
+const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login', lang = 'id' }) => {
+  const t = translations[lang];
   const [mode, setMode] = useState(initialMode);
   const [formData, setFormData] = useState({
     name: '',
@@ -22,7 +24,7 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
     
     if (mode === 'register') {
       if (!formData.name || !formData.email || !formData.password) {
-        setError('Semua kolom wajib diisi!');
+        setError(t.error_fill_all);
         return;
       }
       // Simulate registering to localStorage
@@ -32,11 +34,11 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
         password: formData.password
       }));
       setMode('login');
-      setError('Registrasi berhasil! Silakan masuk.');
+      setError(t.success_register);
       setFormData({ ...formData, password: '' }); 
     } else {
       if (!formData.email || !formData.password) {
-        setError('Email dan Password wajib diisi!');
+        setError(t.error_fill_email_pass);
         return;
       }
       // Simulate checking from localStorage
@@ -47,19 +49,19 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
           onSuccess(user.name);
           onClose();
         } else {
-          setError('Email atau password salah!');
+          setError(t.error_wrong_pass);
         }
       } else {
-        setError('Akun tidak ditemukan. Silakan daftar terlebih dahulu.');
+        setError(t.error_not_found);
       }
     }
   };
 
   return (
-    <div className="auth-overlay">
-      <div className="auth-modal">
-        <button className="auth-close-btn" onClick={onClose}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <div className="modal-overlay">
+      <div className="modal-content auth-modal">
+        <button className="modal-close-btn" onClick={onClose}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -67,12 +69,12 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
         
         <div className="auth-header">
           <img src="/mjt-logo.png" alt="Logo" className="auth-logo" />
-          <h2>{mode === 'login' ? 'Selamat Datang' : 'Buat Akun Baru'}</h2>
-          <p>{mode === 'login' ? 'Masuk untuk mengakses Peta Metro Jabar' : 'Daftar untuk menikmati navigasi cerdas'}</p>
+          <h2>{mode === 'login' ? t.auth_title_login : t.auth_title_register}</h2>
+          <p>{mode === 'login' ? t.auth_desc_login : t.auth_desc_register}</p>
         </div>
 
         {error && (
-          <div className={`auth-alert ${error.includes('berhasil') ? 'success' : 'error'}`}>
+          <div className={`auth-alert ${error.includes('berhasil') || error.includes('successful') ? 'success' : 'error'}`}>
             {error}
           </div>
         )}
@@ -80,11 +82,11 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
         <form onSubmit={handleSubmit} className="auth-form">
           {mode === 'register' && (
             <div className="form-group">
-              <label>Nama Lengkap</label>
+              <label>{t.label_name}</label>
               <input 
                 type="text" 
                 name="name" 
-                placeholder="Masukkan nama Anda" 
+                placeholder={t.placeholder_name} 
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -92,7 +94,7 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
           )}
           
           <div className="form-group">
-            <label>Email</label>
+            <label>{t.label_email}</label>
             <input 
               type="email" 
               name="email" 
@@ -103,7 +105,7 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
           </div>
 
           <div className="form-group">
-            <label>Password</label>
+            <label>{t.label_password}</label>
             <input 
               type="password" 
               name="password" 
@@ -113,16 +115,16 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
             />
           </div>
 
-          <button type="submit" className="auth-submit-btn">
-            {mode === 'login' ? 'Masuk' : 'Daftar Sekarang'}
+          <button type="submit" className="btn-primary auth-submit-btn">
+            {mode === 'login' ? t.btn_login : t.btn_register}
           </button>
         </form>
 
         <div className="auth-footer">
           {mode === 'login' ? (
-             <p>Belum punya akun? <span onClick={() => { setMode('register'); setError(''); }}>Daftar di sini</span></p>
+             <p>{t.auth_switch_login}<span onClick={() => { setMode('register'); setError(''); }}>{t.link_register}</span></p>
           ) : (
-             <p>Sudah punya akun? <span onClick={() => { setMode('login'); setError(''); }}>Masuk</span></p>
+             <p>{t.auth_switch_register}<span onClick={() => { setMode('login'); setError(''); }}>{t.link_login}</span></p>
           )}
         </div>
       </div>
@@ -130,4 +132,4 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login' }) => {
   );
 };
 
-export default AuthModal;
+export default AuthModal;

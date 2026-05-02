@@ -1,0 +1,139 @@
+.payment-guide-content {
+  max-width: 800px !important;
+  padding: 3rem !important;
+  background: linear-gradient(145deg, #ffffff, #f8fafc) !important;
+}
+
+.pg-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pg-icon-main {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.pg-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.pg-header p {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.pg-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.pg-step-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.pg-step-card:hover {
+  transform: translateY(-10px);
+  border-color: #00A7D0;
+  box-shadow: 0 20px 30px rgba(0, 167, 208, 0.1);
+}
+
+.pg-step-number {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00A7D0;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 167, 208, 0.3);
+}
+
+.pg-step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.pg-step-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.8rem;
+}
+
+.pg-step-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.pg-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pg-info-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #92400e;
+  max-width: 500px;
+}
+
+.pg-info-box strong {
+  white-space: nowrap;
+}
+
+.pg-btn-done {
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pg-btn-done:hover {
+  background: #00A7D0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 167, 208, 0.2);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 640px) {
+  .pg-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}

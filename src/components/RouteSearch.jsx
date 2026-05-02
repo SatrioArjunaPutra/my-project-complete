@@ -1,10 +1,44 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import { findRoute, processRouteInstructions, extractPathGeometry } from "../utils/routing";
+import { translations } from "../utils/translations";
 
-function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
+function RouteSearch({ corridors, onRouteFound, onRouteClear, lang = 'id', triggerRoute }) {
+    const t = translations[lang];
+    const [originQuery, setOriginQuery] = useState("");
+    const [destQuery, setDestQuery] = useState("");
     const [originId, setOriginId] = useState("");
     const [destId, setDestId] = useState("");
+    const [activeField, setActiveField] = useState(null); // 'origin' or 'dest'
     const [result, setResult] = useState(null);
+
+    const containerRef = useRef(null);
+
+    // Effect to handle external trigger (like from Map Popup)
+    useEffect(() => {
+        if (triggerRoute && triggerRoute.origin && triggerRoute.destination) {
+            const origin = triggerRoute.origin;
+            const dest = triggerRoute.destination;
+            
+            setOriginId(origin.uniqueId);
+            setOriginQuery(origin.name + (origin.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${origin.direction})` : ""));
+            
+            setDestId(dest.uniqueId);
+            setDestQuery(dest.name + (dest.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${dest.direction})` : ""));
+        }
+    }, [triggerRoute]);
+
+    // Additional effect to auto-search when IDs are set via trigger
+    useEffect(() => {
+        if (triggerRoute && originId && destId && 
+            originId === triggerRoute.origin.uniqueId && 
+            destId === triggerRoute.destination.uniqueId) {
+            
+            const timer = setTimeout(() => {
+                handleSearch();
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [originId, destId, triggerRoute]);
 
     // Extract all unique stops
     const allStops = useMemo(() => {
@@ -22,14 +56,30 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
         );
     }, [corridors]);
 
+    // Filtered stops for origin
+    const filteredOriginStops = useMemo(() => {
+        if (!originQuery) return allStops;
+        return allStops.filter(s => 
+            s.name.toLowerCase().includes(originQuery.toLowerCase())
+        );
+    }, [allStops, originQuery]);
+
+    // Filtered stops for destination
+    const filteredDestStops = useMemo(() => {
+        if (!destQuery) return allStops;
+        return allStops.filter(s => 
+            s.name.toLowerCase().includes(destQuery.toLowerCase())
+        );
+    }, [allStops, destQuery]);
+
     const handleSearch = () => {
         if (!originId || !destId) {
-            alert("Silakan pilih halte asal dan tujuan terlebih dahulu.");
+            alert(lang === 'id' ? "Silakan pilih halte asal dan tujuan terlebih dahulu." : "Please select origin and destination stops first.");
             return;
         }
         
         if (originId === destId) {
-            alert("Halte asal dan tujuan tidak boleh sama.");
+            alert(lang === 'id' ? "Halte asal dan tujuan tidak boleh sama." : "Origin and destination stops cannot be the same.");
             return;
         }
 
@@ -52,7 +102,7 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
                     });
                 }
             } else {
-                alert("Tidak dapat menemukan rute antara kedua halte tersebut.");
+                alert(lang === 'id' ? "Tidak dapat menemukan rute antara kedua halte tersebut." : "Could not find a route between those two stops.");
             }
         }
     };
@@ -60,18 +110,41 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
     const handleClear = () => {
         setOriginId("");
         setDestId("");
+        setOriginQuery("");
+        setDestQuery("");
         setResult(null);
         if (onRouteClear) onRouteClear();
     };
 
+    const handleSelectStop = (stop, field) => {
+        if (field === 'origin') {
+            setOriginId(stop.uniqueId);
+            setOriginQuery(stop.name + (stop.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${stop.direction})` : ""));
+        } else {
+            setDestId(stop.uniqueId);
+            setDestQuery(stop.name + (stop.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${stop.direction})` : ""));
+        }
+        setActiveField(null);
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (containerRef.current && !containerRef.current.contains(e.target)) {
+                setActiveField(null);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
     return (
-        <div className="route-search-panel">
+        <div className="route-search-panel" ref={containerRef}>
             <div className="rs-header">
                 <div className="rs-title-row">
                     <svg viewBox="0 0 24 24" className="rs-plane-icon">
                         <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                     </svg>
-                    <h2>Cari Rute</h2>
+                    <h2>{lang === 'id' ? 'Cari Rute' : 'Find Route'}</h2>
                     {result && (
                         <button className="rs-close-btn" onClick={handleClear}>
                             ✕
@@ -79,7 +152,7 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
                     )}
                 </div>
                 <p className="rs-subtitle">
-                    Pilih halte asal dan tujuan untuk melihat rute
+                    {lang === 'id' ? 'Pilih halte asal dan tujuan untuk melihat rute tercepat' : 'Select origin and destination stops to see the fastest route'}
                 </p>
             </div>
 
@@ -89,20 +162,39 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
                         <svg viewBox="0 0 24 24" className="rs-pin-icon green">
                             <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                         </svg>
-                        Halte Asal
+                        {lang === 'id' ? 'Halte Asal' : 'Origin Stop'}
                     </label>
-                    <select
-                        value={originId}
-                        onChange={(e) => setOriginId(e.target.value)}
-                        className="rs-select"
-                    >
-                        <option value="">Pilih halte asal</option>
-                        {allStops.map((stop) => (
-                            <option key={`orig-${stop.uniqueId}`} value={stop.uniqueId}>
-                                {stop.name} {stop.direction !== "N/A" ? `(Halte ${stop.direction})` : ""}
-                            </option>
-                        ))}
-                    </select>
+                    <div className="rs-input-group">
+                        <input
+                            type="text"
+                            className="rs-custom-input"
+                            placeholder={lang === 'id' ? 'Ketik halte asal...' : 'Type origin stop...'}
+                            value={originQuery}
+                            onChange={(e) => {
+                                setOriginQuery(e.target.value);
+                                setOriginId("");
+                                setActiveField('origin');
+                            }}
+                            onFocus={() => setActiveField('origin')}
+                        />
+                        {activeField === 'origin' && (
+                            <div className="rs-dropdown">
+                                {filteredOriginStops.length > 0 ? (
+                                    filteredOriginStops.map((stop) => (
+                                        <div 
+                                            key={`orig-${stop.uniqueId}`} 
+                                            className="rs-dropdown-item"
+                                            onClick={() => handleSelectStop(stop, 'origin')}
+                                        >
+                                            {stop.name} {stop.direction !== "N/A" ? `(${lang === 'id' ? 'Halte' : 'Stop'} ${stop.direction})` : ""}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="rs-no-results">{lang === 'id' ? 'Halte tidak ditemukan' : 'Stop not found'}</div>
+                                )}
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 <div className="rs-field">
@@ -110,27 +202,46 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
                         <svg viewBox="0 0 24 24" className="rs-pin-icon red">
                             <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                         </svg>
-                        Halte Tujuan
+                        {lang === 'id' ? 'Halte Tujuan' : 'Destination Stop'}
                     </label>
-                    <select
-                        value={destId}
-                        onChange={(e) => setDestId(e.target.value)}
-                        className="rs-select"
-                    >
-                        <option value="">Pilih halte tujuan</option>
-                        {allStops.map((stop) => (
-                            <option key={`dest-${stop.uniqueId}`} value={stop.uniqueId}>
-                                {stop.name} {stop.direction !== "N/A" ? `(Halte ${stop.direction})` : ""}
-                            </option>
-                        ))}
-                    </select>
+                    <div className="rs-input-group">
+                        <input
+                            type="text"
+                            className="rs-custom-input"
+                            placeholder={lang === 'id' ? 'Ketik halte tujuan...' : 'Type destination stop...'}
+                            value={destQuery}
+                            onChange={(e) => {
+                                setDestQuery(e.target.value);
+                                setDestId("");
+                                setActiveField('dest');
+                            }}
+                            onFocus={() => setActiveField('dest')}
+                        />
+                        {activeField === 'dest' && (
+                            <div className="rs-dropdown">
+                                {filteredDestStops.length > 0 ? (
+                                    filteredDestStops.map((stop) => (
+                                        <div 
+                                            key={`dest-${stop.uniqueId}`} 
+                                            className="rs-dropdown-item"
+                                            onClick={() => handleSelectStop(stop, 'dest')}
+                                        >
+                                            {stop.name} {stop.direction !== "N/A" ? `(${lang === 'id' ? 'Halte' : 'Stop'} ${stop.direction})` : ""}
+                                        </div>
+                                    ))
+                                ) : (
+                                    <div className="rs-no-results">{lang === 'id' ? 'Halte tidak ditemukan' : 'Stop not found'}</div>
+                                )}
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 <button className="rs-submit-btn" onClick={handleSearch}>
                     <svg viewBox="0 0 24 24" className="rs-btn-icon">
                         <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                     </svg>
-                    Cari Rute
+                    {lang === 'id' ? 'Cari Rute' : 'Find Route'}
                 </button>
             </div>
 
@@ -143,7 +254,7 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
                             </svg>
                         </div>
                         <div className="rs-result-info">
-                            <span className="rs-result-label">Dari</span>
+                            <span className="rs-result-label">{lang === 'id' ? 'Dari' : 'From'}</span>
                             <span className="rs-result-value">{result.origin.name}</span>
                         </div>
                     </div>
@@ -154,27 +265,35 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
                             </svg>
                         </div>
                         <div className="rs-result-info">
-                            <span className="rs-result-label">Ke</span>
+                            <span className="rs-result-label">{lang === 'id' ? 'Ke' : 'To'}</span>
                             <span className="rs-result-value">{result.destination.name}</span>
                         </div>
                     </div>
 
                     <div className="rs-instructions">
-                        <div className="rs-inst-title">Langkah Perjalanan:</div>
+                        <div className="rs-inst-title">{lang === 'id' ? 'Langkah Perjalanan:' : 'Travel Steps:'}</div>
                         {result.instructions.map((inst, idx) => (
                             <div key={idx} className={`rs-inst-step ${inst.type}`}>
                                 {inst.type === 'ride' ? (
                                     <>
                                         <div className="rs-step-icon bg-blue">🚌</div>
                                         <div className="rs-step-text">
-                                            Naik <strong>{inst.corridorName}</strong> dari {inst.fromStop.name} ke {inst.toStop.name} ({inst.distance.toFixed(1)} km)
+                                            {lang === 'id' ? (
+                                                <>Naik <strong>{inst.corridorName}</strong> dari {inst.fromStop.name} ke {inst.toStop.name} ({inst.distance.toFixed(1)} km)</>
+                                            ) : (
+                                                <>Ride <strong>{inst.corridorName}</strong> from {inst.fromStop.name} to {inst.toStop.name} ({inst.distance.toFixed(1)} km)</>
+                                            )}
                                         </div>
                                     </>
                                 ) : (
                                     <>
                                         <div className="rs-step-icon bg-yellow">🚶</div>
                                         <div className="rs-step-text">
-                                            Transit di <strong>{inst.stop.name}</strong>
+                                            {lang === 'id' ? (
+                                                <>Transit di <strong>{inst.stop.name}</strong></>
+                                            ) : (
+                                                <>Transfer at <strong>{inst.stop.name}</strong></>
+                                            )}
                                         </div>
                                     </>
                                 )}
@@ -183,7 +302,7 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear }) {
                     </div>
 
                     <div className="rs-result-dist">
-                        <span className="rs-dist-label">Total Jarak Tempuh</span>
+                        <span className="rs-dist-label">{lang === 'id' ? 'Total Jarak Tempuh' : 'Total Travel Distance'}</span>
                         <span className="rs-dist-value">{result.distance.toFixed(2)} km</span>
                     </div>
                 </div>

@@ -1,0 +1,162 @@
+/* RouteModal.css */
+
+.route-modal {
+  max-width: 500px;
+}
+
+.route-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.route-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.route-header p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.route-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.route-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.route-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.route-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.route-card.active {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.route-card-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.route-card-header:hover {
+  background: #f8fafc;
+}
+
+.route-card.active .route-card-header {
+  background: #f8fafc;
+}
+
+.route-badge {
+  color: white;
+  font-weight: 900;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  min-width: 42px;
+  text-align: center;
+}
+
+.route-name {
+  font-weight: 700;
+  color: var(--text);
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.route-toggle-icon {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.route-toggle-icon.rotated {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.route-details {
+  padding: 0 20px 20px 20px;
+  background: #f8fafc;
+  animation: fadeIn 0.3s ease;
+}
+
+.stop-timeline {
+  position: relative;
+  padding-top: 10px;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 24px;
+  bottom: 14px;
+  left: 11px;
+  width: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.stop-item {
+  position: relative;
+  padding: 10px 0 10px 35px;
+  display: flex;
+  align-items: center;
+}
+
+.stop-dot {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--text-muted);
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.stop-dot.endpoint {
+  border-width: 4px;
+  width: 14px;
+  height: 14px;
+  left: 5px;
+}
+
+.stop-label {
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.stop-label.important {
+  font-weight: 700;
+  color: var(--text);
+}

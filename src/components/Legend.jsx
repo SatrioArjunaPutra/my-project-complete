@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { translations } from "../utils/translations";
 
-function Legend({ corridors, visibility, onToggle, stats }) {
+function Legend({ corridors, visibility, onToggle, stats, lang = 'id' }) {
+    const t = translations[lang];
     const [collapsed, setCollapsed] = useState(false);
 
     return (
@@ -8,7 +10,7 @@ function Legend({ corridors, visibility, onToggle, stats }) {
             <div className="legend-header" onClick={() => setCollapsed(!collapsed)}>
                 <h3>
                     <span className="legend-icon">🗺️</span>
-                    Koridor MJT
+                    {lang === 'id' ? 'Koridor MJT' : 'MJT Corridors'}
                 </h3>
                 <button className="legend-toggle">{collapsed ? "▶" : "▼"}</button>
             </div>
@@ -20,15 +22,11 @@ function Legend({ corridors, visibility, onToggle, stats }) {
                         <div className="legend-stats">
                             <div className="stat-item">
                                 <span className="stat-value">{stats.totalCorridors}</span>
-                                <span className="stat-label">Koridor</span>
+                                <span className="stat-label">{t.stats_corridors}</span>
                             </div>
                             <div className="stat-item">
                                 <span className="stat-value">{stats.totalStopPoints}</span>
-                                <span className="stat-label">Titik Halte</span>
-                            </div>
-                            <div className="stat-item">
-                                <span className="stat-value">{stats.totalUniqueLocations}</span>
-                                <span className="stat-label">Lokasi</span>
+                                <span className="stat-label">{t.stats_stops}</span>
                             </div>
                         </div>
                     )}
@@ -50,7 +48,7 @@ function Legend({ corridors, visibility, onToggle, stats }) {
                                 <span className="legend-route">{corridor.route}</span>
                                 <span className="legend-hours">⏰ {corridor.operatingHours}</span>
                                 <span className="legend-stop-count">
-                                    📍 {corridor.totalStopPoints} titik halte
+                                    📍 {corridor.totalStopPoints} {lang === 'id' ? 'titik halte' : 'bus stops'}
                                 </span>
                             </div>
                         </label>
@@ -58,26 +56,26 @@ function Legend({ corridors, visibility, onToggle, stats }) {
 
                     {/* Symbols */}
                     <div className="legend-symbols">
-                        <h4>Simbol</h4>
+                        <h4>{lang === 'id' ? 'Simbol' : 'Symbols'}</h4>
                         <div className="symbol-row">
                             <div className="symbol-terminal" />
-                            <span>Terminal</span>
+                            <span>{lang === 'id' ? 'Terminal' : 'Terminal'}</span>
                         </div>
                         <div className="symbol-row">
                             <div className="symbol-stop" />
-                            <span>Halte</span>
+                            <span>{lang === 'id' ? 'Halte' : 'Bus Stop'}</span>
                         </div>
                         <div className="symbol-row">
                             <div className="symbol-transit" />
-                            <span>Titik Transit</span>
+                            <span>{lang === 'id' ? 'Titik Transit' : 'Transit Point'}</span>
                         </div>
                         <div className="symbol-row">
                             <span className="symbol-dir-a">A</span>
-                            <span>Halte A (Arah Tujuan)</span>
+                            <span>{lang === 'id' ? 'Halte A (Arah Tujuan)' : 'Stop A (Outbound)'}</span>
                         </div>
                         <div className="symbol-row">
                             <span className="symbol-dir-b">B</span>
-                            <span>Halte B (Arah Kembali)</span>
+                            <span>{lang === 'id' ? 'Halte B (Arah Kembali)' : 'Stop B (Inbound)'}</span>
                         </div>
                     </div>
                 </div>
