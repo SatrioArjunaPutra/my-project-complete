@@ -7,8 +7,8 @@ export const tourismData = [
     halteTerdekat: "Lapangan Gasibu B",
     koridor: ["Koridor 1", "Koridor 2"],
     gambar: [
-      \"/Gedung-Sate-1.jpg",
-      \"/Museum-Gedung-Sate-Bandung-2-768x360.jpg"
+      "/Gedung-Sate-1.jpg",
+      "/Museum-Gedung-Sate-Bandung-2-768x360.jpg"
     ],
     lat: -6.90240966923579, 
     lng: 107.6187255686285
@@ -21,8 +21,8 @@ export const tourismData = [
     halteTerdekat: "Alun-Alun Bandung",
     koridor: ["Koridor 1", "Koridor 3"],
     gambar: [
-      \"/braga 1.jpeg",
-      \"/braga 2.jpg"
+      "/braga 1.jpeg",
+      "/braga 2.jpg"
     ],
     lat: -6.916903125892329, 
     lng: 107.60920341004521
@@ -35,8 +35,8 @@ export const tourismData = [
     halteTerdekat: "Alun-Alun Bandung",
     koridor: ["Koridor 2"],
     gambar: [
-      \"/Alun-Alun-Bandung.jpg",
-      \"/18-halte-alun-alun-Fenta-Fijayanto.jpg"
+      "/Alun-Alun-Bandung.jpg",
+      "/18-halte-alun-alun-Fenta-Fijayanto.jpg"
     ],
     lat: -6.921520624446946, 
     lng: 107.607105211897
@@ -49,8 +49,8 @@ export const tourismData = [
     halteTerdekat: "Bandung Creative Hub",
     koridor: ["Koridor 4"],
     gambar: [
-      \"/the-trans-studio-bandung.jpg",
-      \"/tsm.jpg"
+      "/the-trans-studio-bandung.jpg",
+      "/tsm.jpg"
     ],
     lat: -6.925371584157637, 
     lng: 107.63664613888129

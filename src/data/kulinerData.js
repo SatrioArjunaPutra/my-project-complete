@@ -9,7 +9,7 @@ export const kulinerData = [
     koridor: ["Koridor 1", "Koridor 3"],
     harga: "Rp 28.500 - 160.500",
     gambar: [
-      \"/cf5a-Restaurant-Grillnesia-interior.jpg",
+      "/cf5a-Restaurant-Grillnesia-interior.jpg",
     ],
     lat: -6.915167977, 
     lng: 107.5971126
@@ -22,8 +22,8 @@ export const kulinerData = [
     koridor: ["Koridor 2"],
     harga: "Rp 10.000 - 35.000",
     gambar: [
-      \"/Warung-Nasi-Ibu-Imas-Bandung-1024x461.jpeg",
-      \"/OIP.jpeg"
+      "/Warung-Nasi-Ibu-Imas-Bandung-1024x461.jpeg",
+      "/OIP.jpeg"
     ],
     lat: -6.925670983, 
     lng: 107.6072609
@@ -36,8 +36,8 @@ export const kulinerData = [
     koridor: ["Koridor 1"],
     harga: "Rp 35.000 - 80.000",
     gambar: [
-      \"/Iga-Bakar-Si-Jangkung.jpg",
-      \"/bd129230-17fd-481c-9cf7-d7b125ed0186_Go-Biz_20240903_164928.jpeg"
+      "/Iga-Bakar-Si-Jangkung.jpg",
+      "/bd129230-17fd-481c-9cf7-d7b125ed0186_Go-Biz_20240903_164928.jpeg"
     ],
     lat: -6.894936124, 
     lng: 107.6021743
@@ -50,8 +50,8 @@ export const kulinerData = [
     koridor: ["Koridor 3"],
     harga: "Rp 18.000 - 80.000",
     gambar: [
-      \"/6794275e406f5-roti-gempol_bandung.jpg",
-      \"/Roti-Bakar-Gempol.png"
+      "/6794275e406f5-roti-gempol_bandung.jpg",
+      "/Roti-Bakar-Gempol.png"
     ],
     lat: -6.902570972, 
     lng: 107.6157358
@@ -64,8 +64,8 @@ export const kulinerData = [
     koridor: ["Koridor 3"],
     harga: "Rp 12.500 - 25.000",
     gambar: [
-      \"/cuanki-serayu-tampak-depan_reg.webp",
-      \"/Cuanki Serayu.jpeg"
+      "/cuanki-serayu-tampak-depan_reg.webp",
+      "/Cuanki Serayu.jpeg"
     ],
     lat: -6.907970917, 
     lng: 107.6256278
@@ -78,8 +78,8 @@ export const kulinerData = [
     koridor: ["Koridor 3"],
     harga: "Rp 18.000 - 20.000",
     gambar: [
-      \"/Kupat-Tahu-Gempol.jpeg",
-      \"/1663221262.jpg"
+      "/Kupat-Tahu-Gempol.jpeg",
+      "/1663221262.jpg"
     ],
     lat: -6.902831521, 
     lng: 107.6154713
@@ -92,8 +92,8 @@ export const kulinerData = [
     koridor: ["Koridor 3"],
     harga: "Rp 6.000 - 30.000",
     gambar: [
-      \"/ayam-sari-rasa-bandung.jpg",
-      \"/image-20-1536x1152.png"
+      "/ayam-sari-rasa-bandung.jpg",
+      "/image-20-1536x1152.png"
     ],
     lat: -6.908327322, 
     lng: 107.6110081
