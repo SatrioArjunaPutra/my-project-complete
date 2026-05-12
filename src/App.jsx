@@ -31,6 +31,8 @@ import TourismPage from './components/TourismPage';
 import CulinaryPage from './components/CulinaryPage';
 import { translations } from "./utils/translations";
 import SavedStopsModal from "./components/SavedStopsModal";
+import { kulinerData } from "./data/kulinerData";
+import { tourismData } from "./data/tourismData";
 
 // Fix default marker icon paths
 delete L.Icon.Default.prototype._getIconUrl;
@@ -52,7 +54,6 @@ const getDistance = (lat1, lon1, lat2, lon2) => {
 };
 
 // --- ICONS ---
-
 const selectedIcon = L.divIcon({
   className: "custom-selected-icon",
   html: `<div class="selected-marker-pulse"><div class="selected-marker-inner"></div></div>`,
@@ -93,6 +94,30 @@ const destIcon = L.divIcon({
   popupAnchor: [0, -15]
 });
 
+const culinaryIcon = L.divIcon({
+  className: "custom-culinary-icon",
+  html: `
+    <div style="width: 30px; height: 30px; background: #F39C12; border: 3px solid white; border-radius: 50%; box-shadow: 0 4px 10px rgba(243,156,18,0.4); display: flex; align-items: center; justify-content: center; font-size: 16px;">
+      🍜
+    </div>
+  `,
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+  popupAnchor: [0, -15]
+});
+
+const tourismIcon = L.divIcon({
+  className: "custom-tourism-icon",
+  html: `
+    <div style="width: 30px; height: 30px; background: #9B59B6; border: 3px solid white; border-radius: 50%; box-shadow: 0 4px 10px rgba(155,89,182,0.4); display: flex; align-items: center; justify-content: center; font-size: 16px;">
+      📸
+    </div>
+  `,
+  iconSize: [30, 30],
+  iconAnchor: [15, 15],
+  popupAnchor: [0, -15]
+});
+
 // Fly-to Anti Crash
 function FlyToStop({ stop }) {
   const map = useMap();
@@ -121,6 +146,9 @@ function App() {
   const [currentView, setCurrentView] = useState('landing'); // 'landing', 'map', 'tourism', 'culinary'
   const [lang, setLang] = useState("id");
   const t = translations[lang];
+  
+  // State untuk nampung data pencarian auto
+  const [initialSearch, setInitialSearch] = useState({ origin: "", destination: "" });
 
   const [savedStops, setSavedStops] = useState(() => {
     try {
@@ -266,18 +294,96 @@ function App() {
     }
   }, [selectedStop]);
 
-  if (currentView === 'tourism') return <TourismPage onBack={() => setCurrentView('landing')} lang={lang} />;
-  if (currentView === 'culinary') return <CulinaryPage onBack={() => setCurrentView('landing')} lang={lang} />;
+  // ==========================================
+  // 👇 INI BAGIAN ROUTING HALAMAN LU YANG UDAH DIPERBAIKI 👇
+  // ==========================================
+  
+  // PARIWISATA - SEKARANG UDAH BISA NANGKEP RUTE GPS!
+  if (currentView === 'tourism') return (
+    <TourismPage 
+      onBack={() => setCurrentView('landing')} 
+      lang={lang} 
+      onRouteSelect={(searchData) => {
+        if (searchData.origin === "GPS") {
+          setCurrentView('map'); 
+          const targetStop = corridors.flatMap(c => c.stops).find(s => {
+            const searchName = (searchData.destination || "").toLowerCase().replace('halte ', '').trim();
+            const stopName = (s.name || "").toLowerCase().replace('halte ', '').trim();
+            const stopFullName = (s.fullName || "").toLowerCase().replace('halte ', '').trim();
+            return stopName === searchName || stopFullName === searchName || stopName.includes(searchName) || searchName.includes(stopName);
+          });
+
+          if (targetStop) {
+            setTimeout(() => {
+              handleRouteFromLocation(targetStop); 
+            }, 300); 
+          } else {
+            alert(lang === 'id' ? "Halte tujuan tidak ditemukan." : "Stop not found.");
+          }
+        } 
+        else {
+          setInitialSearch(searchData);
+          setCurrentView('map');
+        }
+      }}
+    />
+  );
+  
+  if (currentView === 'culinary') return (
+    <CulinaryPage 
+      onBack={() => setCurrentView('landing')} 
+      lang={lang} 
+      // Nangkep halte dari tombol "Cek Rute"
+      onRouteSelect={(searchData) => {
+        // Kalo asalnya minta dari GPS otomatis
+        if (searchData.origin === "GPS") {
+          setCurrentView('map'); // Pindah ke peta dulu
+
+          // Cari data detail halte tujuannya dari array corridors
+          const targetStop = corridors.flatMap(c => c.stops).find(s => {
+            // Ubah semua jadi huruf kecil dan hapus kata "halte " di depannya
+            const searchName = (searchData.destination || "").toLowerCase().replace('halte ', '').trim();
+            const stopName = (s.name || "").toLowerCase().replace('halte ', '').trim();
+            const stopFullName = (s.fullName || "").toLowerCase().replace('halte ', '').trim();
+            
+            // Cocokin namanya sekarang
+            return stopName === searchName || stopFullName === searchName || stopName.includes(searchName) || searchName.includes(stopName);
+          });
+
+          // Gambar rute otomatis dari GPS ke Halte
+          if (targetStop) {
+            setTimeout(() => {
+              handleRouteFromLocation(targetStop); 
+            }, 300); // Kasih jeda dikit biar petanya ke-render dulu
+          } else {
+            alert(lang === 'id' ? "Halte tujuan tidak ditemukan." : "Stop not found.");
+          }
+        } 
+        // Kalo pencarian biasa (dari Landing Page dll)
+        else {
+          setInitialSearch(searchData);
+          setCurrentView('map');
+        }
+      }}
+    />
+  );
 
   if (currentView === 'landing') return (
     <LandingPage 
-      onEnter={() => setCurrentView('map')} 
+      // Nangkep data dari Landing Page
+      onEnter={(searchData) => {
+        if (searchData && (searchData.origin || searchData.destination)) {
+          setInitialSearch(searchData);
+        }
+        setCurrentView('map');
+      }} 
       onShowTourism={() => setCurrentView('tourism')}
       onShowCulinary={() => setCurrentView('culinary')}
       lang={lang} 
       setLang={setLang} 
     />
   );
+  // ==========================================
 
   return (
     <div className={`app-container ${isCleanView ? 'clean-view' : ''}`}>
@@ -310,6 +416,7 @@ function App() {
           maxZoom={30} 
           className="map-container"
           zoomControl={false}
+      
         >
           <TileLayer
             attribution='&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
@@ -317,6 +424,46 @@ function App() {
             maxZoom={30}
             maxNativeZoom={20}
           />
+          
+          {/* 👇 TAMBAHIN KODINGAN INI BUAT NAMPILIN TITIK WISATA 👇 */}
+          {tourismData.map((wisata) => (
+            <Marker key={wisata.id} position={[wisata.lat, wisata.lng]} icon={tourismIcon}>
+              <Popup className="gm-popup">
+                 <div className="gm-popup-content" style={{ padding: '5px' }}>
+                    <div className="gm-title" style={{ fontSize: '14px', marginBottom: '5px', color: '#9B59B6' }}>
+                       {wisata.nama}
+                    </div>
+                    <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '10px' }}>
+                       {wisata.deskripsi}
+                    </div>
+                    <div style={{ fontSize: '11px', background: '#f1f5f9', padding: '4px', borderRadius: '4px' }}>
+                       📍 Halte Terdekat: <strong>{wisata.halteTerdekat}</strong>
+                    </div>
+                 </div>
+              </Popup>
+            </Marker>
+          ))}
+
+
+          {/* 👇 Menampilkan Titik Kuliner di Peta 👇 */}
+          {kulinerData.map((kuliner) => (
+            <Marker key={kuliner.id} position={[kuliner.lat, kuliner.lng]} icon={culinaryIcon}>
+              <Popup className="gm-popup">
+                 <div className="gm-popup-content" style={{ padding: '5px' }}>
+                    <div className="gm-title" style={{ fontSize: '14px', marginBottom: '5px', color: '#F39C12' }}>
+                       {kuliner.nama}
+                    </div>
+                    <div style={{ fontSize: '12px', color: '#64748b', marginBottom: '10px' }}>
+                       {kuliner.deskripsi}
+                    </div>
+                    <div style={{ fontSize: '11px', background: '#f1f5f9', padding: '4px', borderRadius: '4px' }}>
+                       📍 Halte Terdekat: <strong>{kuliner.halteTerdekat}</strong>
+                    </div>
+                 </div>
+              </Popup>
+            </Marker>
+          ))}
+          
           <ZoomControl position="bottomleft" />
           <UserLocationMarker position={userPos} />
           <FlyToStop stop={selectedStop} />
@@ -457,18 +604,26 @@ function App() {
               )}
             </>
           )}
+          
+
         </MapContainer>
+        
 
         {!isCleanView && (
           <>
             <SearchBar corridors={corridors} onSelectStop={handleSelectStop} lang={lang} />
+            
+            {/* 👇 DATA INITIAL SEARCH DIKIRIM KE SINI 👇 */}
             <RouteSearch 
               corridors={corridors} 
               onRouteFound={handleRouteFound} 
               onRouteClear={handleRouteClear}
               triggerRoute={triggerRoute}
+              initialOrigin={initialSearch.origin} 
+              initialDestination={initialSearch.destination}
               lang={lang}
             />
+            
             <Legend corridors={corridors} visibility={visibility} onToggle={toggleCorridor} stats={stats} lang={lang} />
           </>
         )}

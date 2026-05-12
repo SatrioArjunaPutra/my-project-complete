@@ -2,36 +2,32 @@ import { Polyline, Marker, Popup, Tooltip } from "react-leaflet";
 import L from "leaflet";
 
 // Create custom bus stop icon with A/B indicator
-const createStopIcon = (color, direction) =>
-    L.divIcon({
-        className: "custom-stop-icon",
-        html: `<div style="
-      position: relative;
-      width: 14px;
-      height: 14px;
-      background: ${color};
-      border: 2.5px solid white;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    ">
-      <span style="
-        position: absolute;
-        top: -8px;
-        right: -10px;
-        font-size: 8px;
-        font-weight: 800;
-        color: ${direction === "A" ? "#2ecc71" : "#e74c3c"};
-        background: white;
-        border-radius: 3px;
-        padding: 0 2px;
-        line-height: 1.2;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-      ">${direction}</span>
-    </div>`,
-        iconSize: [14, 14],
-        iconAnchor: [7, 7],
-        popupAnchor: [0, -10],
+// Bikin icon halte bentuk BUS yang warnanya ngikutin koridor
+  const createStopIcon = (color) => {
+    return L.divIcon({
+      className: "custom-mjt-bus-stop",
+      html: `
+        <div style="
+          width: 24px; 
+          height: 24px; 
+          background-color: white; 
+          border: 2px solid ${color || '#333'}; 
+          border-radius: 50%; 
+          display: flex; 
+          align-items: center; 
+          justify-content: center;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+          transition: transform 0.2s;
+        ">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="${color || '#333'}">
+            <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/>
+          </svg>
+        </div>
+      `,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12], // Titik tengah
     });
+  };
 
 // Create terminal icon
 const createTerminalIcon = (color, direction) =>

@@ -908,4 +908,176 @@
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   box-shadow: 0 -20px 40px rgba(0,0,0,0.02);
 }
-
+
+/* =========================================
+   SUPPORT CENTER & SOCIAL MEDIA SECTION
+========================================= */
+.support-center-section {
+  margin-top: 60px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.support-subtitle {
+  font-size: 1.1rem;
+  color: #4b5563;
+  font-weight: 500;
+  margin-bottom: -10px;
+}
+
+.support-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.support-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 18px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 20px;
+}
+
+.support-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: #e5e7eb;
+}
+
+.support-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.support-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Warna background icon */
+.bg-blue-light { background: #dbeafe; }
+.bg-indigo-light { background: #e0e7ff; }
+.bg-cyan-light { background: #cffafe; }
+
+.support-text h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.support-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* =========================================
+   SUPPORT CENTER & SOCIAL MEDIA SECTION
+========================================= */
+.support-center-section {
+  margin-top: 30px;
+  margin-bottom: 0px; /* Bikin mepet bawah biar ga ada sisa putih jelek */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Posisikan container di tengah layar */
+  width: 100%;
+}
+
+/* Kunci utama: Bikin lebarnya nyamain banner atas dan rata kiri */
+.support-content-wrapper {
+  width: 100%;
+  max-width: 980px; /* Lebar maksimal rata-rata container lu */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.support-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.support-cards-grid {
+  display: flex;
+  flex-direction: column; /* Balik dibikin vertikal/numpuk ke bawah */
+  gap: 16px;
+  width: 100%;
+}
+
+.support-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.support-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: #e2e8f0;
+}
+
+.support-icon { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.support-icon svg { width: 24px; height: 24px; }
+.bg-blue-light { background: #dbeafe; }
+.bg-indigo-light { background: #e0e7ff; }
+
+.support-text h4 { margin: 0 0 6px 0; font-size: 1.15rem; color: #1e293b; }
+.support-text p { margin: 0; font-size: 0.9rem; color: #64748b; line-height: 1.5; }
+
+/* --- Social Media Section --- */
+.social-media-container {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Teks dan icon dipaksa ke kiri */
+}
+
+.social-media-container h4 { margin: 0 0 8px 0; font-size: 1.15rem; color: #1e293b; }
+.social-media-container p { margin: 0 0 20px 0; font-size: 0.95rem; color: #64748b; line-height: 1.5; text-align: left; }
+
+.social-icons { display: flex; gap: 15px; justify-content: flex-start; }
+
+.social-btn {
+  width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  color: white; cursor: pointer; transition: transform 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.social-btn:hover { transform: scale(1.1) rotate(5deg); }
+.social-btn svg { width: 24px; height: 24px; }
+
+.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.facebook { background: #1877f2; }
+.tiktok { background: #000000; }
+
+/* --- Tarik Animasi Bus Ke Atas Biar Ga Kopong --- */
+.bus-animation-strip {
+  margin-top: 10px !important; 
+}
+

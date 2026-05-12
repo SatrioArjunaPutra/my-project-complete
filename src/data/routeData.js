@@ -79,7 +79,7 @@ const k2Stops = [
 ];
 
 const k3Stops = [
-  { name: "PLN Baleendah", fullName: "PLN Baleendah", lat: -6.9932, lng: 107.63177, direction: "N/A", type: "terminal", corridorId: 3, facility: "Terminal bus", system: "Metro Jabar Trans" },
+  { name: "PLN Baleendah", fullName: "PLN Baleendah", lat: -7.00610, lng: 107.62573, direction: "N/A", type: "terminal", corridorId: 3, facility: "Terminal bus", system: "Metro Jabar Trans" },
   { name: "RS Al Ihsan", fullName: "RS Al Ihsan", lat: -7.007449350645707, lng: 107.62427421330133, direction: "N/A", type: "halte", corridorId: 3, facility: "Halte bus", system: "Metro Jabar Trans" },
   { name: "Kejari Bale Bandung", fullName: "Kejari Bale Bandung", lat: -7.00597894351223, lng: 107.62374736368406, direction: "N/A", type: "halte", corridorId: 3, facility: "Halte bus", system: "Metro Jabar Trans" },
   { name: "Apotek K24", fullName: "Apotek K24", lat: -6.969902164135952, lng: 107.63690825946261, direction: "N/A", type: "halte", corridorId: 3, facility: "Halte bus", system: "Metro Jabar Trans" },
@@ -224,7 +224,7 @@ export const corridors = [
   {
     id: 2,
     name: "Koridor 2",
-    route: "Kota Baru Parahyangan – Alun-Alun",
+    route: "KBP – Alun-Alun",
     color: "#e74c3c",
     operatingHours: "04.30 – 20.00 WIB",
     totalStopPoints: k2Stops.length,

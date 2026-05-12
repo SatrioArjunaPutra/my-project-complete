@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { translations } from '../utils/translations';
 import './AuthModal.css';
+import { supabase } from '../utils/supabaseClient';
 
 const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login', lang = 'id' }) => {
   const t = translations[lang];
@@ -11,6 +12,7 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login', lang = '
     password: ''
   });
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   if (!isOpen) return null;
 
@@ -19,42 +21,56 @@ const AuthModal = ({ isOpen, onClose, onSuccess, initialMode = 'login', lang = '
     setError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError('');
     
     if (mode === 'register') {
       if (!formData.name || !formData.email || !formData.password) {
         setError(t.error_fill_all);
+        setIsLoading(false);
         return;
       }
-      // Simulate registering to localStorage
-      localStorage.setItem('mjt_user', JSON.stringify({
-        name: formData.name,
+      
+      const { data, error } = await supabase.auth.signUp({
         email: formData.email,
-        password: formData.password
-      }));
-      setMode('login');
-      setError(t.success_register);
-      setFormData({ ...formData, password: '' }); 
+        password: formData.password,
+        options: {
+          data: {
+            full_name: formData.name
+          }
+        }
+      });
+      
+      if (error) {
+        setError(error.message);
+      } else {
+        setMode('login');
+        setError(t.success_register);
+        setFormData({ ...formData, password: '' }); 
+      }
     } else {
       if (!formData.email || !formData.password) {
         setError(t.error_fill_email_pass);
+        setIsLoading(false);
         return;
       }
-      // Simulate checking from localStorage
-      const savedUser = localStorage.getItem('mjt_user');
-      if (savedUser) {
-        const user = JSON.stringify(savedUser) === 'object' ? savedUser : JSON.parse(savedUser);
-        if (user.email === formData.email && user.password === formData.password) {
-          onSuccess(user.name);
-          onClose();
-        } else {
-          setError(t.error_wrong_pass);
-        }
+      
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password
+      });
+      
+      if (error) {
+        setError(error.message);
       } else {
-        setError(t.error_not_found);
+        const userName = data.user?.user_metadata?.full_name || formData.email.split('@')[0];
+        onSuccess(userName);
+        onClose();
       }
     }
+    setIsLoading(false);
   };
 
   return (

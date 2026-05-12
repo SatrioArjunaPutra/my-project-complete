@@ -1,58 +1,91 @@
-import React from 'react';
-import { translations } from '../utils/translations';
-import './HelpModal.css';
+import React, { useState } from 'react';
+import './LandingPage.css'; 
 
-const HelpModal = ({ isOpen, onClose, lang = 'id' }) => {
-  const t = translations[lang];
+const HelpModal = ({ isOpen, onClose }) => {
+  // State buat ngatur pertanyaan mana yang lagi dibuka
+  const [activeIndex, setActiveIndex] = useState(null);
+
   if (!isOpen) return null;
 
-  return (
-    <div className="modal-overlay">
-      <div className="modal-content help-modal">
-        <button className="modal-close-btn" onClick={onClose}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+  // Data FAQ dari referensi gambar lu (Udah diganti jadi Metro Jabar Trans)
+  const faqs = [
+    {
+      q: "1. APA ITU METRO JABAR TRANS?",
+      a: "Metro Jabar Trans adalah layanan bus perkotaan modern berbasis Bus Rapid Transit (BRT) yang beroperasi di wilayah Cekungan Bandung Raya, Provinsi Jawa Barat. Layanan MJT ini merupakan rebranding dari Trans Metro Pasundan, yang sebelumnya merupakan bagian dari program Teman Bus oleh Kementerian Perhubungan Republik Indonesia sejak tanggal 31 Desember 2024. Sejak tanggal 1 Januari 2025, pengelolaan layanan operasional MJT dilakukan PT Jasa Sarana yaitu BUMD yang mendapatkan penugasan dari Pemerintah Provinsi Jawa Barat."
+    },
+    {
+      q: "2. BAGAIMANA INFRASTRUKTUR KE DEPAN?",
+      a: "Mulai tahun 2025, infrastruktur pendukung seperti jalur khusus, jalur pejalan kaki, dan halte BRT akan dibangun untuk meningkatkan kenyamanan dan efisiensi layanan. Metro Jabar Trans juga merencanakan ekspansi layanan menjadi 21 koridor pada tahun 2027. Selain itu, integrasi dengan sistem transportasi lain seperti KRL Padalarang-Cicalengka sedang diupayakan agar mobilitas masyarakat semakin mudah dan terhubung."
+    },
+    {
+      q: "3. APAKAH METRO JABAR TRANS RAMAH DISABILITAS?",
+      a: "• Terdapat tarif khusus untuk penyandang disabilitas (Rp2.000 dengan KUE terdaftar).\n• Tersedia ramp portable di armada bus untuk penyandang disabilitas."
+    },
+    {
+      q: "4. BAGAIMANA CARA MENGHUBUNGI INFORMASI LEBIH LANJUT?",
+      a: "Kunjungi akun Instagram resmi @brt.metrojabartrans dan layanan pelanggan melalui aplikasi Whatsapp 0822-19158-6131 untuk update rute dan informasi lainnya."
+    }
+  ];
 
-        <div className="help-header">
-          <h2>{t.help_title}</h2>
-          <p>{t.help_desc}</p>
+  // Fungsi buat buka/tutup jawaban FAQ
+  const toggleFaq = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <div className="japan-modal-overlay" onClick={onClose} style={{ zIndex: 9999 }}>
+      {/* Modal Content */}
+      <div className="japan-modal-content" onClick={e => e.stopPropagation()} style={{ padding: '30px', maxWidth: '650px', width: '90%', maxHeight: '85vh', overflowY: 'auto' }}>
+        <button className="japan-modal-close" onClick={onClose}>✕</button>
+        
+        {/* Header FAQ */}
+        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+          <h2 style={{ color: '#1f2937', marginBottom: '5px', fontSize: '1.2rem', fontWeight: 'bold' }}>FAQ</h2>
+          <h3 style={{ color: '#2563eb', margin: '0 0 10px 0', fontSize: '1.6rem' }}>Pertanyaan yang sering diajukan</h3>
+          <p style={{ color: '#6b7280', fontSize: '0.95rem' }}>Temukan jawaban terbaik dari pertanyaan atau permasalahan Anda</p>
+        </div>
+        
+        {/* List Pertanyaan (Accordion) */}
+        <div className="faq-list" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+          {faqs.map((faq, index) => (
+            <div 
+              key={index} 
+              style={{ 
+                borderBottom: '1px solid #e5e7eb', 
+                paddingBottom: '15px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onClick={() => toggleFaq(index)}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#1f2937', lineHeight: '1.4', paddingRight: '20px', fontWeight: '600' }}>
+                  {faq.q}
+                </h4>
+                <span style={{ fontSize: '1.5rem', color: '#2563eb', fontWeight: 'bold', transition: 'transform 0.3s ease', transform: activeIndex === index ? 'rotate(45deg)' : 'rotate(0deg)' }}>
+                  +
+                </span>
+              </div>
+              
+              {/* Jawaban Muncul Kalau Diklik */}
+              {activeIndex === index && (
+                <div style={{ marginTop: '15px', color: '#4b5563', fontSize: '0.95rem', lineHeight: '1.6', background: '#f8fafc', padding: '15px', borderRadius: '8px', borderLeft: '4px solid #2563eb' }}>
+                  {faq.a.split('\n').map((line, i) => (
+                    <p key={i} style={{ margin: '0 0 8px 0' }}>{line}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
-        <div className="help-body">
-          <section className="help-section">
-            <h3> Panduan Penggunaan</h3>
-            <ul className="help-list">
-              <li>Gunakan tombol <strong>GPS</strong> di pojok kanan untuk melihat posisi Anda.</li>
-              <li>Klik pada <strong>Ikon Halte</strong> untuk melihat status halte tersebut.</li>
-              <li>Warna garis di peta menunjukkan koridor bus yang berbeda.</li>
-            </ul>
-          </section>
-
-          <section className="help-section contact-box">
-            <h3> {t.contact_us}</h3>
-            <p>{t.contact_desc}</p>
-            <div className="contact-btns">
-              <a 
-                href="https://wa.me/6282218586131?text=Halo%20Metro%20Jabar%20Trans,%20saya%20membutuhkan%20bantuan%20terkait..." 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn-primary whatsapp-btn"
-                style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}
-              >
-                {t.btn_wa}
-              </a>
-            </div>
-            <p style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.85rem', color: 'var(--text-dim)' }}>
-              Atau bisa hubungi email kami: <span style={{ color: 'var(--accent)', fontWeight: '600' }}>MasRdanATaji@gmail.com</span>
-            </p>
-          </section>
+        {/* Footer Copyright */}
+        <div style={{ marginTop: '40px', textAlign: 'center', color: '#9ca3af', fontSize: '0.8rem', borderTop: '1px solid #e5e7eb', paddingTop: '20px' }}>
+          Metro Jabar Trans | Copyright © 2026 Nusantara Global Inovasi.<br/>All rights reserved. Version 0.0.1
         </div>
       </div>
     </div>
   );
 };
 
-export default HelpModal;
+export default HelpModal;

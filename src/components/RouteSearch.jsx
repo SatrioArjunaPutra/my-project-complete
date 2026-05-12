@@ -2,7 +2,8 @@ import React, { useState, useMemo, useRef, useEffect } from "react";
 import { findRoute, processRouteInstructions, extractPathGeometry } from "../utils/routing";
 import { translations } from "../utils/translations";
 
-function RouteSearch({ corridors, onRouteFound, onRouteClear, lang = 'id', triggerRoute }) {
+// 👇 Tambahin initialOrigin dan initialDestination di sini
+function RouteSearch({ corridors, onRouteFound, onRouteClear, lang = 'id', triggerRoute, initialOrigin, initialDestination }) {
     const t = translations[lang];
     const [originQuery, setOriginQuery] = useState("");
     const [destQuery, setDestQuery] = useState("");
@@ -13,34 +14,7 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear, lang = 'id', trigg
 
     const containerRef = useRef(null);
 
-    // Effect to handle external trigger (like from Map Popup)
-    useEffect(() => {
-        if (triggerRoute && triggerRoute.origin && triggerRoute.destination) {
-            const origin = triggerRoute.origin;
-            const dest = triggerRoute.destination;
-            
-            setOriginId(origin.uniqueId);
-            setOriginQuery(origin.name + (origin.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${origin.direction})` : ""));
-            
-            setDestId(dest.uniqueId);
-            setDestQuery(dest.name + (dest.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${dest.direction})` : ""));
-        }
-    }, [triggerRoute]);
-
-    // Additional effect to auto-search when IDs are set via trigger
-    useEffect(() => {
-        if (triggerRoute && originId && destId && 
-            originId === triggerRoute.origin.uniqueId && 
-            destId === triggerRoute.destination.uniqueId) {
-            
-            const timer = setTimeout(() => {
-                handleSearch();
-            }, 100);
-            return () => clearTimeout(timer);
-        }
-    }, [originId, destId, triggerRoute]);
-
-    // Extract all unique stops
+    // Extract all unique stops (Dipindah ke atas biar bisa dipake di dalem useEffect)
     const allStops = useMemo(() => {
         const stopsMap = new Map();
         corridors.forEach((c) => {
@@ -55,6 +29,87 @@ function RouteSearch({ corridors, onRouteFound, onRouteClear, lang = 'id', trigg
             a.name.localeCompare(b.name)
         );
     }, [corridors]);
+
+    // =========================================================
+    // 👇 EFEK BARU: Nangkep Data dari Landing Page / Kuliner
+    // =========================================================
+    useEffect(() => {
+        if ((initialOrigin || initialDestination) && allStops.length > 0) {
+            let originStop = null;
+            let destStop = null;
+
+            // 1. Cek kalau ada Halte Asal
+            if (initialOrigin) {
+                const originKataKunci = initialOrigin.toLowerCase().trim();
+                originStop = allStops.find(s => 
+                    (s.name && s.name.toLowerCase().includes(originKataKunci)) || 
+                    (s.fullName && s.fullName.toLowerCase().includes(originKataKunci))
+                );
+                if (originStop) {
+                    setOriginId(originStop.uniqueId);
+                    setOriginQuery(originStop.name + (originStop.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${originStop.direction})` : ""));
+                }
+            }
+
+            // 2. Cek kalau ada Halte Tujuan (Dari Halaman Kuliner)
+            if (initialDestination) {
+                const destKataKunci = initialDestination.toLowerCase().trim();
+                destStop = allStops.find(s => 
+                    (s.name && s.name.toLowerCase().includes(destKataKunci)) || 
+                    (s.fullName && s.fullName.toLowerCase().includes(destKataKunci))
+                );
+                if (destStop) {
+                    setDestId(destStop.uniqueId);
+                    setDestQuery(destStop.name + (destStop.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${destStop.direction})` : ""));
+                }
+            }
+
+            // 3. Kalau DUA-DUANYA lengkap, langsung cari rutenya otomatis
+            if (originStop && destStop) {
+                setTimeout(() => {
+                    const routeResult = findRoute(corridors, originStop.uniqueId, destStop.uniqueId);
+                    if (routeResult) {
+                        const instructions = processRouteInstructions(routeResult);
+                        const pathGeometry = extractPathGeometry(corridors, instructions);
+                        setResult({ origin: originStop, destination: destStop, distance: routeResult.totalDistance, instructions });
+                        if (onRouteFound) {
+                            onRouteFound({ origin: originStop, destination: destStop, instructions, totalDistance: routeResult.totalDistance, pathGeometry });
+                        }
+                    }
+                }, 100);
+            }
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [initialOrigin, initialDestination, allStops, corridors]);
+    // =========================================================
+
+    // Effect to handle external trigger (like from Map Popup)
+    useEffect(() => {
+        if (triggerRoute && triggerRoute.origin && triggerRoute.destination) {
+            const origin = triggerRoute.origin;
+            const dest = triggerRoute.destination;
+            
+            setOriginId(origin.uniqueId);
+            setOriginQuery(origin.name + (origin.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${origin.direction})` : ""));
+            
+            setDestId(dest.uniqueId);
+            setDestQuery(dest.name + (dest.direction !== "N/A" ? ` (${lang === 'id' ? 'Halte' : 'Stop'} ${dest.direction})` : ""));
+        }
+    }, [triggerRoute, lang]);
+
+    // Additional effect to auto-search when IDs are set via trigger
+    useEffect(() => {
+        if (triggerRoute && originId && destId && 
+            originId === triggerRoute.origin.uniqueId && 
+            destId === triggerRoute.destination.uniqueId) {
+            
+            const timer = setTimeout(() => {
+                handleSearch();
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [originId, destId, triggerRoute]);
 
     // Filtered stops for origin
     const filteredOriginStops = useMemo(() => {
